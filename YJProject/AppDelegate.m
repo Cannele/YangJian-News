@@ -2,12 +2,14 @@
 //  AppDelegate.m
 //  YJProject
 //
-//  Created by Cannele on 15/9/27.
+//  Created by YangJian on 15/9/27.
 //  Copyright © 2015年 YangJian. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
+#import "AppDelegate+Category.h"
+#import "YJTabBarController.h"
+#import <BmobSDK/Bmob.h>
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self initializeWithApplication:application];
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    YJTabBarController *tabBar = [[YJTabBarController alloc]init];
+    self.window.rootViewController = tabBar;
+    [self.window makeKeyAndVisible];
+    //设置BMOBKey
+    [Bmob registerWithAppKey:@"8ca586dcfd274ca0709870d3a62f6e6e"];
     return YES;
 }
 

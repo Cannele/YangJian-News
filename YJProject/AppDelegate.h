@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  YJProject
 //
-//  Created by Cannele on 15/9/27.
+//  Created by YangJian on 15/9/27.
 //  Copyright © 2015年 YangJian. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property(nonatomic,getter=isOnLine) BOOL onLine; //网络状态
 
 @end
 
